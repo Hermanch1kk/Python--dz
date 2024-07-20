@@ -1,0 +1,59 @@
+def multiply_list_elements(lst):
+    result = 1
+    for num in lst:
+        result *= num
+    return result
+#---------------------------------
+
+def find_minimum(lst):
+    if not lst:
+        return None
+    min_element = lst[0]
+    if num < min_element:
+            min_element = num 
+    return min_element
+#-------------------------------
+
+def is_prime(num):
+    """ Перевіряє, чи є число простим """
+    if num <= 1:
+        return False
+    if num == 2:
+        return True
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+def count_prime_numbers(lst):
+    """ Підраховує кількість простих чисел y списку """
+    count = 0
+    for num in lst:
+        if is_prime(num):
+            count += 1
+    return count
+#----------------------------------------------------------
+
+def remove_elements(lst, num):
+    """ Видаляє всі входження числа num зі списку lst """
+    count_removed = 0
+    i = 0
+    while i < len(lst):
+        if lst[i] == num:
+            lst.pop(i)
+            count_removed += 1
+        else:
+            i += 1
+    return count_removed
+#------------------------------------------------------------
+
+def merge_lists(list1, list2):
+    """ Об'єднує два списки у один і повертає результат """
+    merged_list = list1 + list2
+    return merged_list
+#-------------------------------------------------------------
+def power_list_elements(lst, power):
+    """ Обчислює ступінь кожного елемента списку і повертає новий список """
+    powered_list = list(map(lambda x: x ** power, lst))
+    return powered_list
+#----------------------------------------------------------------------------
+
